@@ -16,4 +16,16 @@ public class CanvasActivity extends AppCompatActivity {
         canvasLayout = new CanvasLayout(this);
         setContentView(canvasLayout);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        canvasLayout.resume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        canvasLayout.pause();
+    }
 }
