@@ -8,10 +8,28 @@
     tools:context="com.example.farhan.animationdemo.MainActivity">
 
     <Button
-        android:id="@+id/canvas_activity"
+    android:id="@+id/canvas_activity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Hello Arnob"/>
+
+    <Button
+        android:id="@+id/canvas_activity_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello Arnob"/>
+        android:text="Hello Arnob two"/>
+
+    <Button
+        android:id="@+id/canvas_activity_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello Arnob three"/>
+
+    <Button
+        android:id="@+id/canvas_activity_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello Arnob four"/>
 
     <LinearLayout
         android:id="@+id/view"

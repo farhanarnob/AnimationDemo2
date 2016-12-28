@@ -14,31 +14,27 @@ import android.view.SurfaceView;
  * Created by ${farhanarnob} on ${06-Oct-16}.
  */
 
-public class CanvasLayout extends SurfaceView implements Runnable {
+public class CanvasLayoutTwo extends SurfaceView implements Runnable,SurfaceHolder.Callback {
     Thread thread = null;
     boolean canDraw;
     Canvas canvas;
     float circleX=400,circleY=400,dirX,dirY, radius;
-    double tLF, tEOR, deltaT, framesPerSecond,frameTimeInSeconds,frameTimeInMS,frameTimeInNS,
-    physics_rate,dt;
+    double tLF, tEOR, deltaT, framesPerSecond,frameTimeInSeconds,frameTimeInMS,frameTimeInNS;
     Bitmap backGroundCheck;
     ApplicationAnimation applicationAnimation;
     SurfaceHolder surfaceHolder;
-    public CanvasLayout(Context context) {
+    public CanvasLayoutTwo(Context context) {
         super(context);
         backGroundCheck = BitmapFactory.decodeResource(getResources(),R.drawable.background);
         applicationAnimation =(ApplicationAnimation) ((Activity)context).getApplication();
         surfaceHolder = getHolder();
+        surfaceHolder.addCallback(this);
         dirX=dirY=5*context.getResources().getDisplayMetrics().density;
         radius = 20*context.getResources().getDisplayMetrics().density;
         framesPerSecond = 220;
         frameTimeInSeconds = 1/framesPerSecond;
         frameTimeInMS = frameTimeInSeconds*1000;
         frameTimeInNS= frameTimeInMS*1000000;
-
-
-        physics_rate = 50;
-        dt = (1/physics_rate)*1000000000;
 
     }
 
@@ -118,5 +114,21 @@ public class CanvasLayout extends SurfaceView implements Runnable {
         }
 
         thread  = null;
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder surfaceHolder) {
+
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
+        circleX=i1;
+        circleY=i2;
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+
     }
 }

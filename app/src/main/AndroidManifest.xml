@@ -20,6 +20,15 @@
         <activity android:name=".CanvasActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".CanvasActivityTwo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".CanvasActivityThree"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".CanvasActivityFour"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

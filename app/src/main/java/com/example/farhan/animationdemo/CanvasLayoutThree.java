@@ -14,17 +14,16 @@ import android.view.SurfaceView;
  * Created by ${farhanarnob} on ${06-Oct-16}.
  */
 
-public class CanvasLayout extends SurfaceView implements Runnable {
+public class CanvasLayoutThree extends SurfaceView implements Runnable {
     Thread thread = null;
     boolean canDraw;
     Canvas canvas;
     float circleX=400,circleY=400,dirX,dirY, radius;
-    double tLF, tEOR, deltaT, framesPerSecond,frameTimeInSeconds,frameTimeInMS,frameTimeInNS,
-    physics_rate,dt;
+    double tLF, tEOR, deltaT, framesPerSecond,frameTimeInSeconds,frameTimeInMS,frameTimeInNS;
     Bitmap backGroundCheck;
     ApplicationAnimation applicationAnimation;
     SurfaceHolder surfaceHolder;
-    public CanvasLayout(Context context) {
+    public CanvasLayoutThree(Context context) {
         super(context);
         backGroundCheck = BitmapFactory.decodeResource(getResources(),R.drawable.background);
         applicationAnimation =(ApplicationAnimation) ((Activity)context).getApplication();
@@ -35,10 +34,6 @@ public class CanvasLayout extends SurfaceView implements Runnable {
         frameTimeInSeconds = 1/framesPerSecond;
         frameTimeInMS = frameTimeInSeconds*1000;
         frameTimeInNS= frameTimeInMS*1000000;
-
-
-        physics_rate = 50;
-        dt = (1/physics_rate)*1000000000;
 
     }
 
